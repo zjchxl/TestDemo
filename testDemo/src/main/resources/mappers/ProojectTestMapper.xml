@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 指定工作空间，要与接口名相同，源代码没有去看，猜测应该是通过"这里的namespace.下边方法的id"来定位方法的 -->  
+<mapper namespace="com.example.testDemo.dao.TestProjectDao">
+
+	<insert id="insert" parameterType="com.example.testDemo.pojo.ProjectTestBean">
+		INSERT INTO a_project_test (pro_no,pro_fuction,pro_id,inpute_date,pro_estiscale,pro_budget,input_state) VALUES (#{pro_no},#{pro_fuction},#{pro_id},#{inpute_date},#{pro_estiscale},#{pro_budget},#{input_state}); 
+	</insert>
+	<select id="find" parameterType="int" resultType="com.example.testDemo.pojo.ProjectTestBean">
+		SELECT a.pro_no,a.pro_fuction,a.pro_id,a.inpute_date,a.pro_estiscale,a.pro_budget,a.input_state FROM a_project_test a WHERE a.pro_no = #{0};
+	</select>
+	
+</mapper>
